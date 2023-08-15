@@ -154,7 +154,7 @@ const CV = () => {
             alt="img"
             fill
             placeholder="blur"
-            className="absolute brightness-75"
+            className="absolute brightness-75 pointer-events-none"
           ></Image>
           <div className="w-2/6 h-full flex justify-center items-center relative">
             <ProfilePictureSection></ProfilePictureSection>

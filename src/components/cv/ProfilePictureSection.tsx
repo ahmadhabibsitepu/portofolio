@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { responsiveProfilePictureSize } from "./responsiveSize";
-import profilePicture from "../../../public/profilePicture.png";
+import profilePicture from "../../../public/profilePicture.jpg";
 
 const ProfilePictureSection = () => {
   return (
@@ -11,9 +11,8 @@ const ProfilePictureSection = () => {
       <Image
         src={profilePicture}
         alt="img"
-        fill
         placeholder="blur"
-        className="rounded-full object-contain absolute scale-150"
+        className="rounded-full object-contain absolute scale-110 pointer-events-none"
       ></Image>
     </div>
   );

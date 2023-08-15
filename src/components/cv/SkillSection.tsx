@@ -28,7 +28,7 @@ const SkillList = ({ skill }: { skill: Skill }) => {
             typeof value === "object" ? (
               <li key={index}>
                 {`${value.label} :`}
-                <ul className="list-disc ml-[12%]">
+                <ul className="list-disc ml-[16%]">
                   {value.list.map((value, index) => (
                     <li key={index}>{value}</li>
                   ))}
