@@ -17,7 +17,7 @@ const Hero = () => {
       </div>
       <div className="flex w-full flex-col gap-2 sm:w-3/5">
         <h2 className="text-center text-3xl font-semibold tracking-tight sm:text-left">
-          Hi, i'm Habib
+          Hi, i&apos;m Habib
         </h2>
         <p className="w-full text-center leading-7 text-muted-foreground sm:text-justify">
           Bachelor of Computer Science from Universitas Sumatera Utara. I am a
