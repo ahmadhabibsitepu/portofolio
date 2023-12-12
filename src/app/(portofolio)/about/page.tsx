@@ -8,11 +8,7 @@ import LayoutContainer from "@/components/LayoutContainer";
 import HeroSection from "@/components/about/HeroSection";
 import EducationSection from "@/components/about/EducationSection";
 import ExperienceSection from "@/components/about/ExperienceSection";
-
-export const AboutPageContext = createContext({
-  isHeroAnimationFinish: false,
-  setIsHeroAnimationFinish: (isHeroAnimationFinish: boolean) => {},
-});
+import { AboutPageContext } from "@/context";
 
 const Page = () => {
   const [isHeroAnimationFinish, setIsHeroAnimationFinish] =

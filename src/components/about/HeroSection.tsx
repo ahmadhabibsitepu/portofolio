@@ -5,7 +5,7 @@ import Image from "next/image";
 import profilePicture from "../../../public/profilePicture.jpg";
 import AboutCTA from "./AboutCTA";
 import { hand } from "@/lib/staticData";
-import { AboutPageContext } from "@/app/(portofolio)/about/page";
+import { AboutPageContext } from "@/context";
 
 const HeroSection = () => {
   const { setIsHeroAnimationFinish } = useContext(AboutPageContext);

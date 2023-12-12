@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { useInView } from "react-intersection-observer";
 import { cn } from "@/lib/utils";
 
-import { AboutPageContext } from "@/app/(portofolio)/about/page";
+import { AboutPageContext } from "@/context";
 import { Education, educations } from "@/lib/staticData";
 import EducationDetail from "./EducationDetail";
 

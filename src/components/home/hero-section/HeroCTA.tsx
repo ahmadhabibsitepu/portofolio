@@ -5,7 +5,7 @@ import { buttonVariants } from "../../ui/button";
 import { cn } from "@/lib/utils";
 
 import ContactButton from "../../ui/custom/ContactButton";
-import { HomePageContext } from "@/app/(portofolio)/(home)/page";
+import { HomePageContext } from "@/context";
 
 const HeroCTA = ({ ctaAnimationStart }: { ctaAnimationStart: boolean }) => {
   const ctaTextRef = useRef<HTMLHeadingElement>(null);

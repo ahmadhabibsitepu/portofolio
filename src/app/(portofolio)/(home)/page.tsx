@@ -1,20 +1,15 @@
 "use client";
-import { createContext, useState } from "react";
+import { useState } from "react";
 
+import { HomePageContext } from "@/context";
 import HeroSection from "@/components/home/hero-section/HeroSection";
 import SkillSection from "@/components/home/skill-section/SkillSection";
 import WorkSection from "@/components/home/work-section/WorkSection";
 import SectionPostpone from "@/components/home/SectionPostpone";
 
-export const HomePageContext = createContext({
-  isHeroAnimationFinish: false,
-  setIsHeroAnimationFinish: (isHeroAnimationFinish: boolean) => {},
-});
-
 const Page = () => {
   const [isHeroAnimationFinish, setIsHeroAnimationFinish] =
     useState<boolean>(false);
-
   return (
     <>
       <HomePageContext.Provider
