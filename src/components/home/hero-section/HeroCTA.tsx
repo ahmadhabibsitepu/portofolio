@@ -1,20 +1,53 @@
+"use client";
+import { useContext, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Button } from "../../ui/button";
+import { buttonVariants } from "../../ui/button";
+import { cn } from "@/lib/utils";
 
 import ContactButton from "../../ui/custom/ContactButton";
+import { HomePageContext } from "@/app/(portofolio)/(home)/page";
 
-const HeroCTA = () => {
+const HeroCTA = ({ ctaAnimationStart }: { ctaAnimationStart: boolean }) => {
+  const ctaTextRef = useRef<HTMLHeadingElement>(null);
+  const { setIsHeroAnimationFinish } = useContext(HomePageContext);
+
+  useEffect(() => {
+    ctaTextRef.current?.addEventListener("animationend", () => {
+      setIsHeroAnimationFinish(true);
+    });
+  }, [ctaTextRef]);
+
   return (
-    <div className="mt-6 flex w-[320px] justify-center gap-4 px-4 sm:w-[400px] md:w-[440px]">
-      <ContactButton className="h-full w-full text-lg font-semibold shadow-md sm:text-xl md:text-2xl"></ContactButton>
-      <Button
-        asChild
-        variant={"outline"}
-        className="h-full w-full border-2 border-slate-900 text-lg font-semibold shadow-md sm:text-xl md:text-2xl"
+    <>
+      <h4
+        ref={ctaTextRef}
+        className={cn(
+          "mt-6 w-full animate-slide-in-from-bottom text-lg font-semibold tracking-tight delay-200 sm:w-[480px] md:w-[760px]",
+          !ctaAnimationStart && "paused",
+        )}
       >
-        <Link href={"/about"}>About Me</Link>
-      </Button>
-    </div>
+        Let&apos;s collaborate to bring our ideas to life and make a positive
+        impact on the digital world!
+      </h4>
+      <div className="mt-6 flex w-[320px] justify-center gap-4 px-4 sm:w-[400px] md:w-[440px]">
+        <ContactButton
+          className={cn(
+            "h-full w-full animate-slide-in-from-bottom text-lg font-semibold shadow-md delay-500 duration-700 sm:text-xl md:text-2xl",
+            !ctaAnimationStart && "paused",
+          )}
+        ></ContactButton>
+        <Link
+          href={"/about"}
+          className={cn(
+            buttonVariants({ variant: "outline" }),
+            "h-full w-full animate-slide-in-from-bottom border-2 border-foreground px-[14px] py-[6px] text-lg font-semibold shadow-md delay-500 duration-700 sm:text-xl md:text-2xl",
+            !ctaAnimationStart && "paused",
+          )}
+        >
+          About Me
+        </Link>
+      </div>
+    </>
   );
 };
 

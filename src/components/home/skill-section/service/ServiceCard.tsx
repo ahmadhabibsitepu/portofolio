@@ -1,3 +1,6 @@
+"use client";
+import { useInView } from "react-intersection-observer";
+import { cn } from "@/lib/utils";
 import {
   Card,
   CardDescription,
@@ -8,8 +11,16 @@ import {
 import { Service } from "@/lib/staticData";
 
 const ServiceCard = ({ service }: { service: Service }) => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+
   return (
-    <Card className="flex w-full flex-col text-left shadow-md">
+    <Card
+      ref={ref}
+      className={cn(
+        "flex w-full animate-slide-in-from-bottom flex-col text-left shadow-md delay-200",
+        !inView && "paused",
+      )}
+    >
       <CardHeader>
         <CardTitle>{service.title}</CardTitle>
         <CardDescription>{service.description}</CardDescription>

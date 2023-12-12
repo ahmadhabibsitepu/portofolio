@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import { cn } from "@/lib/utils";
 import {
   Card,
   CardContent,
@@ -11,8 +14,18 @@ import {
 import { Work } from "@/lib/staticData";
 
 const WorkCard = ({ work }: { work: Work }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   return (
-    <Card className="group flex w-full max-w-3xl flex-col text-left shadow-md">
+    <Card
+      ref={ref}
+      className={cn(
+        "group flex w-full max-w-3xl animate-slide-in-from-bottom flex-col text-left shadow-md delay-200",
+        !inView && "paused",
+      )}
+    >
       <div className="relative overflow-hidden border-b">
         <Image
           src={work.hover}
@@ -34,15 +47,12 @@ const WorkCard = ({ work }: { work: Work }) => {
         <CardDescription className="border-b pb-2">{work.user}</CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="leading-7">{work.description}</p>
+        <p className="font-semibold">{work.description}</p>
       </CardContent>
       <CardFooter>
-        <div className="flex w-full flex-col gap-1 text-sm font-medium tracking-tight">
+        <div className="flex w-full flex-col gap-2 text-sm tracking-tight">
           <p>{work.note}</p>
-          <div className="flex flex-nowrap gap-1">
-            <p className="whitespace-nowrap">Tech Stack :</p>
-            <span>{work.tech}</span>
-          </div>
+          <div className="font-semibold">{work.tech}</div>
         </div>
       </CardFooter>
     </Card>

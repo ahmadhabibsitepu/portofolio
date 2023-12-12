@@ -1,24 +1,27 @@
 import { StaticImageData } from "next/image";
 
-import logo from "../../public/logo.svg";
-import html from "../../public/tech-icon/html.svg";
-import css from "../../public/tech-icon/css.svg";
-import javascript from "../../public/tech-icon/javascript.svg";
-import reactjs from "../../public/tech-icon/reactjs.svg";
-import nextjs from "../../public/tech-icon/nextjs.svg";
-import tailwindcss from "../../public/tech-icon/tailwindcss.svg";
-import typescript from "../../public/tech-icon/typescript.svg";
-import nodejs from "../../public/tech-icon/nodejs.svg";
-import mysql from "../../public/tech-icon/mysql.svg";
-import mongodb from "../../public/tech-icon/mongodb.svg";
-import prisma from "../../public/tech-icon/prisma.svg";
-import github from "../../public/tech-icon/github.svg";
-import portofolio from "../../public/work-images/portofolio.svg";
-import portofolioHover from "../../public/work-images/portofolio-hover.svg";
-import pcms from "../../public/work-images/pcms.svg";
-import pcmsHover from "../../public/work-images/pcms-hover.svg";
-import anjab from "../../public/work-images/anjab.svg";
-import anjabHover from "../../public/work-images/anjab-hover.svg";
+import logo from "@/public/logo.svg";
+import menuIcon from "@/public/menuIcon.svg";
+import closeIcon from "@/public/closeIcon.svg";
+import hand from "@/public/hand.svg";
+import html from "@/public/tech-icon/html.svg";
+import css from "@/public/tech-icon/css.svg";
+import javascript from "@/public/tech-icon/javascript.svg";
+import reactjs from "@/public/tech-icon/reactjs.svg";
+import nextjs from "@/public/tech-icon/nextjs.svg";
+import tailwindcss from "@/public/tech-icon/tailwindcss.svg";
+import typescript from "@/public/tech-icon/typescript.svg";
+import nodejs from "@/public/tech-icon/nodejs.svg";
+import mysql from "@/public/tech-icon/mysql.svg";
+import mongodb from "@/public/tech-icon/mongodb.svg";
+import prisma from "@/public/tech-icon/prisma.svg";
+import github from "@/public/tech-icon/github.svg";
+import portofolio from "@/public/work-images/portofolio.svg";
+import portofolioHover from "@/public/work-images/portofolio-hover.svg";
+import pcms from "@/public/work-images/pcms.svg";
+import pcmsHover from "@/public/work-images/pcms-hover.svg";
+import anjab from "@/public/work-images/anjab.svg";
+import anjabHover from "@/public/work-images/anjab-hover.svg";
 
 type Service = { title: string; description: string };
 type TechIcon = { image: StaticImageData; text: string };
@@ -46,6 +49,12 @@ type Experience = {
   role: string;
   description?: string;
 };
+
+const jobTitles: string[] = [
+  "Full Stack Web Developer",
+  "Front-End Web Developer",
+  "Back-End Web Developer",
+];
 
 const services: Service[] = [
   {
@@ -151,13 +160,13 @@ const educations: Education[] = [
     location: "SMAT Krida Nusantara, Bandung",
     start: "2013",
     finish: "2016",
-    description: "",
+    description: "Ilmu Pengetahuan Alam (IPA)",
   },
   {
-    location: "S-1 Ilmu Komputer, Universitas Sumatera Utara",
+    location: "Universitas Sumatera Utara, Medan",
     start: "2016",
     finish: "2022",
-    description: "GPA/IPK: 3.74",
+    description: "S-1 Ilmu Komputer, IPK/GPA: 3.74",
   },
 ];
 
@@ -180,5 +189,17 @@ const experiences: Experience[] = [
   },
 ];
 
-export { logo, services, techIcons, works, contacts, educations, experiences };
+export {
+  logo,
+  menuIcon,
+  closeIcon,
+  hand,
+  jobTitles,
+  services,
+  techIcons,
+  works,
+  contacts,
+  educations,
+  experiences,
+};
 export type { Service, TechIcon, Work, Contact, Education, Experience };

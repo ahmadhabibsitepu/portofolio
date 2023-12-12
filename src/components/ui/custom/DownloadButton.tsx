@@ -24,7 +24,7 @@ const DownloadButton = ({
     <Button
       onClick={downloadHandler}
       variant={"outline"}
-      className="h-full w-full border-2 border-slate-900 text-lg font-semibold shadow-md sm:text-xl md:text-2xl"
+      className="h-full w-full border-2 border-foreground px-[14px] py-[6px] text-lg font-semibold shadow-md sm:text-xl md:text-2xl"
     >
       Download {text}
     </Button>

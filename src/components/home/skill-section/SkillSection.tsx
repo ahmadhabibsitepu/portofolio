@@ -1,14 +1,18 @@
-import Services from "./Services";
-import TechStack from "./TechStack";
+"use client";
+import LayoutContainer from "@/components/LayoutContainer";
 import SkillCTA from "./SkillCTA";
+import Services from "./service/Services";
+import TechStack from "./tech/TechStack";
 
 const SkillSection = () => {
   return (
-    <div className="flex w-full flex-col items-center gap-12 pb-6">
-      <Services></Services>
-      <TechStack></TechStack>
-      <SkillCTA></SkillCTA>
-    </div>
+    <LayoutContainer outerDivClassName="border-t">
+      <div className="flex w-full flex-col items-center gap-12 pb-6 text-center">
+        <Services></Services>
+        <TechStack></TechStack>
+        <SkillCTA></SkillCTA>
+      </div>
+    </LayoutContainer>
   );
 };
 
